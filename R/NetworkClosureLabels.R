@@ -14,7 +14,7 @@ library(devtools)
 # install_github("KevCaz/graphicsutils")
 
 # setwd("E:/WD Apps for Windows/Mar2017BUEXTFull/NEW/TAMANI/SOCSCI/NVIVO/Nodes/")#setwd("/Users/KevCaz/Desktop/Helen")
-setwd("~/Codes/Github/Figures/Figures_Wheeler2017")
+# setwd("~/Codes/Github/Figures/Figures_Wheeler2017")
 
 
 ######### KC: Importing data

@@ -8,6 +8,7 @@ library(graphicsutils)
 
 # setwd("E:/WD Apps for Windows/Mar2017BUEXTFull/NEW/TAMANI/SOCSCI/NVIVO/Nodes/")#setwd("/Users/KevCaz/Desktop/Helen")
 setwd("~/Codes/Github/Figures/Figures_Wheeler2017")
+# source("R/walktrap_community2.R")
 
 ######### Import data
 nodes <- read.csv("data/Nodes5_reduced5con2.csv", header=T, as.is=T)
@@ -62,7 +63,7 @@ text(coords[,1], coords[,2], labels=nodes$idnum)
 #for the dendrogram I would like to plot the labels (as used for the nodes rather than
 #short names)
 clus5d <- as.hclust(clus5)
-clus5d$labels <- paste0(nodes2$idnum, ": ", nodes2$Node.name) #nodes$idnum
+clus5d$labels <- paste0(nodes$idnum, ": ", nodes$Node.name) #nodes$idnum
 clus5p <- as.phylo(clus5d)
 
 pal4 <- pal3[nodes$idgrp[clus5p$edge[,2]]]
@@ -72,7 +73,7 @@ plot.phylo(clus5p, cex = .82, label.offset = 0.25, edge.color=pal4, edge.width=1
 abline(v=1.8, col="grey15", lwd=.8)
 dev.off()
 
-
+saveRDS(nodes, "dataReady/nodes.Rds")
 ######
 #
 # nodes2 <- nodes[order(nodes$idnum),]
@@ -81,7 +82,6 @@ dev.off()
 # for (i in 1:nnd){
 #   text(0, nnd-i, labels=paste0(nodes2$idnum[i], ": ", nodes2$Node.name[i]), pos=4)
 # }
-#
 
 ## inter and intra links draft
 # nodes$inter <- nodes$intra <- 0

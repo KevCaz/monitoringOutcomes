@@ -20,8 +20,10 @@ for (i in 1:nrow(links)){
   idt <- which(nodes$id == links[i,2L])
   if (nodes$idgrp[idf] == nodes$idgrp[idt]){
     nodes$intra[idf] <- nodes$intra[idf]+links$orig.wt[i]
+    nodes$intra[idt] <- nodes$intra[idt]+links$orig.wt[i] #HW added to include other linking direction
   } else {
     nodes$inter[idf] <- nodes$inter[idf]+links$orig.wt[i]
+    nodes$inter[idt] <- nodes$inter[idt]+links$orig.wt[i] #HW added to include other linking direction
   }
 }
 

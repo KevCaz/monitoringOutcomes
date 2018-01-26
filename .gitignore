@@ -1,3 +1,13 @@
+# KC added
+Makefile
+inst/datafinal
+inst/dataReady
+inst/Final
+inst/R
+*.csv
+old/
+
+
 # History files
 .Rhistory
 .Rapp.history
@@ -35,8 +45,3 @@ vignettes/*.pdf
 # MacOs files
 .DS_Store
 record_updates.txt
-
-# data for now
-data/
-old/
-fig/

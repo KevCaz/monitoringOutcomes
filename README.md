@@ -1,8 +1,8 @@
-# Analyses and Figures (DOI:XXXX)
+# monitoringOutcomes (DOI: 2 be added)
 
 ## Overview
 
-R functions for analysis of stakeholder perceptions of desirable monitoring outcomes
+R functions for analysis of stakeholder perceptions of desirable monitoring outcomes.
 The following scripts relate to the following figures.
 
 - **Fig 1**: `dartdiag.R`
@@ -11,9 +11,9 @@ The following scripts relate to the following figures.
 - **Fig 3**: `connectivity2a.R`
 - **Fig S1**: `3netscomp2a.R`
 
-Sets of links and nodes are required for the functions to work. They are
-included in the `data` folder; three version are furnished. See `How to` section
-to see how to reproduce the figures of the manuscript.
+Sets of links and nodes are required to creates figures. They are
+included in the `data` folder; three version are furnished. See the `How to` section
+to reproduce the figures of the manuscript.
 
 Orientation of networks may differ on each run due to random placement of the
 first node during plotting to avoid such behavior, use `set.seed()` with

@@ -1,0 +1,19 @@
+id,Node.name,No.sources,Type,old.id
+n12,Identify system linkages,7,Sci,n12
+n02,Make decisions,28,Mix,n13
+n11,Inform research and monitoring,6,Mix,n16
+n10,Secure food,23,Mix,n18
+n14,Learn,14,Mix,n15
+n18,Govern,5,Mix,n17
+n05,Conserve,25,Mix,n19
+n04,Support economic futures,17,Mix,n20
+n16,Expand community,20,Soc,n03
+n13,Cooperate,17,Soc,n10
+n15,Educate,11,Soc,n09
+n17,Disseminate,24,Soc,n08
+n01,Record status,18,Sci,n01
+n09,Synthesise,20,Sci,n05
+n08,Understand systems,18,Sci,n07
+n07,Detect change,26,Sci,n02
+n03,Project futures,10,Sci,n06
+n06,Identify drivers,22,Sci,n04

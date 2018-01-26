@@ -1,0 +1,43 @@
+from,to,From.Name,Type,To.Name,weight
+n01,n07,1.Baselines_status,Direct.cause-effect,2.Detect_characterise change,1
+n15,n16,8.Skill acquisition,Direct.cause-effect,3.Expand_diversify_localise mon community,3
+n13,n16,9.International cooperation,Direct.cause-effect,3.Expand_diversify_localise mon community,1
+n07,n06,2.Detect_characterise change,Direct.cause-effect,4.Assess drivers of change,10
+n16,n06,3.Expand_diversify_localise mon community,Direct.cause-effect,4.Assess drivers of change,1
+n16,n09,3.Expand_diversify_localise mon community,Direct.cause-effect,4a. Synthesise and standardise disparate datasets_info,1
+n07,n03,2.Detect_characterise change,Direct.cause-effect,5.Project futures,1
+n08,n03,6.Understanding and theory,Direct.cause-effect,5.Project futures,2
+n07,n08,2.Detect_characterise change,Direct.cause-effect,6.Understanding and theory,3
+n16,n08,3.Expand_diversify_localise mon community,Direct.cause-effect,6.Understanding and theory,1
+n06,n08,4.Assess drivers of change,Direct.cause-effect,6.Understanding and theory,1
+n09,n08,4a. Synthesise and standardise disparate datasets_info,Direct.cause-effect,6.Understanding and theory,2
+n12,n08,Assess linkages between system components,Direct.cause-effect,6.Understanding and theory,1
+n07,n17,2.Detect_characterise change,Direct.cause-effect,7.Disseminate_provide acces to information,2
+n16,n15,3.Expand_diversify_localise mon community,Direct.cause-effect,8.Skill acquisition,4
+n17,n15,7.Disseminate_provide acces to information,Direct.cause-effect,8.Skill acquisition,3
+n16,n13,3.Expand_diversify_localise mon community,Direct.cause-effect,9.International cooperation,4
+n17,n13,7.Disseminate_provide acces to information,Direct.cause-effect,9.International cooperation,1
+n01,n02,1.Baselines_status,Direct.cause-effect,B.11.Management_policy making,8
+n07,n02,2.Detect_characterise change,Direct.cause-effect,B.11.Management_policy making,11
+n16,n02,3.Expand_diversify_localise mon community,Direct.cause-effect,B.11.Management_policy making,2
+n06,n02,4.Assess drivers of change,Direct.cause-effect,B.11.Management_policy making,9
+n03,n02,5.Project futures,Direct.cause-effect,B.11.Management_policy making,2
+n08,n02,6.Understanding and theory,Direct.cause-effect,B.11.Management_policy making,4
+n17,n02,7.Disseminate_provide acces to information,Direct.cause-effect,B.11.Management_policy making,1
+n16,n14,3.Expand_diversify_localise mon community,Direct.cause-effect,B.13.Learning,3
+n17,n14,7.Disseminate_provide acces to information,Direct.cause-effect,B.13.Learning,7
+n15,n14,8.Skill acquisition,Direct.cause-effect,B.13.Learning,3
+n13,n14,9.International cooperation,Direct.cause-effect,B.13.Learning,1
+n07,n11,2.Detect_characterise change,Direct.cause-effect,B.14.Inform research questions,3
+n12,n11,Assess linkages between system components,Direct.cause-effect,B.14.Inform research questions,1
+n15,n18,8.Skill acquisition,Direct.cause-effect,B.15.Effective governance,1
+n01,n10,1.Baselines_status,Direct.cause-effect,B.16.Zero hunger,1
+n09,n10,4a. Synthesise and standardise disparate datasets_info,Direct.cause-effect,B.16.Zero hunger,1
+n17,n10,7.Disseminate_provide acces to information,Direct.cause-effect,B.16.Zero hunger,3
+n02,n10,B.11.Management_policy making,Direct.cause-effect,B.16.Zero hunger,6
+n16,n05,3.Expand_diversify_localise mon community,Direct.cause-effect,B.17.Life on land and below water,1
+n03,n05,5.Project futures,Direct.cause-effect,B.17.Life on land and below water,2
+n17,n05,7.Disseminate_provide acces to information,Direct.cause-effect,B.17.Life on land and below water,1
+n02,n05,B.11.Management_policy making,Direct.cause-effect,B.17.Life on land and below water,10
+n04,n05,B.18.Industry innovation and infrastructure,Direct.cause-effect,B.17.Life on land and below water,3
+n02,n04,B.11.Management_policy making,Direct.cause-effect,B.18.Industry innovation and infrastructure,6

@@ -76,10 +76,12 @@ dartdiag <- function(nodes, links, vec_col = c("#edac35", "#64c4eb", "#00ac89"))
     plot0()
     sqs <- c(5, 10, 30)
     sql <- c(1, 5, 10)
-    legend(-0.7, 1, legend = paste0(sqs, " sources"), pt.cex = 0.2 * sqs, pch = 21, 
+    legend(-0.8, 1, legend = paste0(sqs, " sources"), pt.cex = 0.2 * sqs, pch = 21, 
         y.intersp = 2, x.intersp = 2, bty = "n")
     sqs <- c(5, 10, 30)
-    legend(0.2, 1, legend = paste0(sqs, " connections"), lwd = 0.75 * sql, y.intersp = 2, 
+    legend(-0.3, 1, legend = paste0(sqs, " connections"), lwd = 0.75 * sql, y.intersp = 2, 
         x.intersp = 2, bty = "n")
-    
+    #HW added legend item for colours, and adjusted positioning for others
+    legend(.3,1, legend = paste0(sqt), pt.cex=5, pch=19, col=c( "#64c4eb","#00ac89","#edac35" ),
+        bg=c( "#64c4eb","#00ac89","#edac35" ), y.intersp=2, x.intersp=2, bty="n")
 }

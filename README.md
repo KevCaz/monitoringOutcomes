@@ -102,11 +102,11 @@ dev.off()
 ### Figure S1
 
 ```R
-set.seed(889)
+set.seed(81932)
 data(nodes2)
 data(links2)
 png("inst/fig/figS1.png", units="in", res=300, width=8.5, heigh=6)
-  netcomp2a(links2, nodes2)
+  netcomp2a(links2, nodes2, vec_col1 = c("#e9db8c", "#11bb99", "#32749e"))
 dev.off()
 ```
 

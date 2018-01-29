@@ -32,6 +32,14 @@ We however acknowledge that despite the form of a standard R package, the code
 presented is more a organized script than a package (*i.e.* functions included
 are not general).
 
+Note that one of the packages required, `graphicsutils`, is not available on
+the CRAN. To install it, proceed as follows:
+
+```R
+install.packages("devtools")
+devtools::install_github("inSileco/graphicsutils")
+```
+
 
 
 ## How to
@@ -40,10 +48,11 @@ are not general).
 
 ```R
 set.seed(1987)
+vec_col <- c("#e9db8c", "#11bb99", "#32749e")
 data(nodes)
 data(links)
 png("inst/fig/fig1.png", width=8, height=10, units="in", res=300)
-  dartdiag(nodes, links)
+  dartdiag(nodes, links, vec_col)
 dev.off()
 ```
 

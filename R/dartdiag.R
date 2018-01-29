@@ -1,4 +1,4 @@
-#' @title dart-styled diagram: Network x closness
+#' @title Dart-styled diagram: Network, closness and more.
 #'
 #' @description Figure 1. Network diagram of the desirable impacts of monitoring
 #' as identified by 29 stakeholders in arctic monitoring.
@@ -13,7 +13,7 @@
 #' @importFrom graphicsutils circle darken getAngle2d plot0
 #' @export
 
-dartdiag <- function(nodes, links, vec_col = c("#edac35", "#64c4eb", "#00ac89")) {
+dartdiag <- function(nodes, links, vec_col = c("#fce983", "#185b86", "#00ac89")) {
     
     #### KC: color palettes (I used the same color as on the other graphs)
     pal <- vec_col[as.factor(nodes$Type)]
@@ -62,7 +62,7 @@ dartdiag <- function(nodes, links, vec_col = c("#edac35", "#64c4eb", "#00ac89"))
     
     ## KC: NODES
     points(nodes$x, nodes$y, cex = 0.2 * nodes$No.sources, pch = 21, col = pal2, 
-        bg = pal, lwd = 1.5)
+        bg = pal, lwd = 1.8)
     
     ## KC: LABELS
     for (i in 1:length(seqc)) {
@@ -81,7 +81,7 @@ dartdiag <- function(nodes, links, vec_col = c("#edac35", "#64c4eb", "#00ac89"))
     sqs <- c(5, 10, 30)
     legend(-0.3, 1, legend = paste0(sqs, " connections"), lwd = 0.75 * sql, y.intersp = 2, 
         x.intersp = 2, bty = "n")
-    #HW added legend item for colours, and adjusted positioning for others
-    legend(.3,1, legend = paste0(sqt), pt.cex=5, pch=19, col=c( "#64c4eb","#00ac89","#edac35" ),
-        bg=c( "#64c4eb","#00ac89","#edac35" ), y.intersp=2, x.intersp=2, bty="n")
+    # HW added legend item for colours, and adjusted positioning for others
+    legend(0.35, 1, legend = c("Information", "Process", "Combined"), pt.cex = 4, 
+        pch = 19, col = vec_col[c(2, 3, 1)], y.intersp = 2, x.intersp = 2, bty = "n")
 }

@@ -2,9 +2,9 @@
 % Please edit documentation in R/dartdiag.R
 \name{dartdiag}
 \alias{dartdiag}
-\title{dart-styled diagram: Network x closness}
+\title{Dart-styled diagram: Network, closness and more.}
 \usage{
-dartdiag(nodes, links, vec_col = c("#edac35", "#64c4eb", "#00ac89"))
+dartdiag(nodes, links, vec_col = c("#fce983", "#185b86", "#00ac89"))
 }
 \arguments{
 \item{nodes}{set of nodes.}

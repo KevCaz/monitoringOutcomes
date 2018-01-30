@@ -11,7 +11,7 @@
 #'
 #' @export
 
-edge_clustering <- function(links, vec_col = c("#aa380b", "#0b58aa", "#f7e37e")) {
+edge_clustering <- function(links, vec_col = c("#993209", "#0c67c8", "#f7e37e")) {
     # simplified list of edges with weights
     links2 <- (as.data.frame(cbind(substring(links$to, 2), substring(links$from, 
         2), links[, 6L])))

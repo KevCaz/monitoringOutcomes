@@ -12,7 +12,7 @@
 #' @importFrom graphics plot abline text
 #' @export
 
-connectivity2a <- function(links, nodes, vec_col1 = c("#edac35", "#64c4eb", "#00ac89")) {
+connectivity2a <- function(links, nodes, vec_col1 = c("#f1bf5f", "#00ac89", "#27ade3")) {
     
     nodes$inter <- nodes$intra <- 0
     

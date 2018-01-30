@@ -12,8 +12,8 @@
 #' @importFrom graphics layout legend lines par points text strwidth
 #' @importFrom graphicsutils circle darken getAngle2d plot0
 #' @export
-
-dartdiag <- function(nodes, links, vec_col = c("#fce983", "#185b86", "#00ac89")) {
+###HW: Small colour change
+dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3")) {
     
     #### KC: color palettes (I used the same color as on the other graphs)
     pal <- vec_col[as.factor(nodes$Type)]

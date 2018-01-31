@@ -9,7 +9,7 @@ The following scripts relate to the following figures.
 - **Fig 2a-b**: `walktrapdendro4.R`
 - **Fig 2c**: `edge_clustering.R`
 - **Fig 3**: `connectivity2a.R`
-- **Fig S1**: `3netscomp2a.R`
+- **Fig S3**: `3netscomp2a.R`
 
 Sets of links and nodes are required to creates figures. They are
 included in the `data` folder; three version are furnished. See the `How to` section
@@ -48,7 +48,7 @@ devtools::install_github("inSileco/graphicsutils")
 
 ```R
 set.seed(1987)
-vec_col <- c("#e9db8c", "#11bb99", "#32749e")
+vec_col <-  c("#f1bf5f", "#00ac89", "#27ade3")
 data(nodes)
 data(links)
 png("inst/fig/fig1.png", width=8, height=10, units="in", res=300)
@@ -90,24 +90,28 @@ dev.off()
 
 ```R
 set.seed(102)
-data(nodes2)
 data(links2)
-png("inst/fig/fig3.png", units="in", res=300, width=8.5, heigh=6)
-  edge_clustering(links2, nodes2)
+data(nodes2)
+vec_names <- sort(gsub(paste0(nodes2[,5L], "  ", nodes2[,2L]), pattern= "^n", replacement = ""))
+png("inst/fig/fig3.png", units="in", res=300, width=8.5, heigh=6.5)
+  edge_clustering(links2, vec_names)
 dev.off()
 ```
 
+
+
 ![](inst/fig/fig3.png)
 
-### Figure S1
+
+### Figure S3
 
 ```R
 set.seed(81932)
 data(nodes2)
 data(links2)
-png("inst/fig/figS1.png", units="in", res=300, width=8.5, heigh=6)
-  netcomp2a(links2, nodes2, vec_col1 = c("#e9db8c", "#11bb99", "#32749e"))
+png("inst/fig/figS3.png", units="in", res=300, width=8, heigh=5)
+  netcomp2a(links2, nodes2)
 dev.off()
 ```
 
-![](inst/fig/figS1.png)
+![](inst/fig/figS3.png)

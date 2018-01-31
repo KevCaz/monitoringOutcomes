@@ -55,7 +55,7 @@ netcomp2a <- function(links, nodes, vec_col1 = c("#f1bf5f", "#00ac89", "#27ade3"
                 id <- which(nodes$id == tmp[j])
                 pts <- rbind(pts, c(coords[id, 1L], coords[id, 2L]))
             }
-            encircle(pts, border = pal3[i], nb.pt = 100, off.set = 0.9, lwd = 2)
+            encircle(pts, border = pal3[i], nb.pt = 200, off.set = 1.1, lwd = 2)
         }
         points(coords[, 1L], coords[, 2L], pch = 21, bg = pal, col = pal2, cex = 3.6, 
             lwd = 1.8)

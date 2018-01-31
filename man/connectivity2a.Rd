@@ -4,7 +4,7 @@
 \alias{connectivity2a}
 \title{Cumulative weights of intra- and inter-group connections for each node}
 \usage{
-connectivity2a(links, nodes, vec_col1 = c("#edac35", "#64c4eb", "#00ac89"))
+connectivity2a(links, nodes, vec_col1 = c("#f1bf5f", "#00ac89", "#27ade3"))
 }
 \arguments{
 \item{links}{set of links.}

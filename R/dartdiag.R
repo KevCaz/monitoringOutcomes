@@ -12,7 +12,7 @@
 #' @importFrom graphics layout legend lines par points text strwidth
 #' @importFrom graphicsutils circle darken getAngle2d plot0
 #' @export
-###HW: Small colour change
+### HW: Small colour change
 dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3")) {
     
     #### KC: color palettes (I used the same color as on the other graphs)
@@ -28,10 +28,10 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
     id <- which(seqc > pi/2 & seqc < 3 * pi/2)
     title.angle[id] <- title.angle[id] + 180
     
-    layout(matrix(c(1, 2), nrow = 2), heights = c(1, 0.2))
-    par(mar = c(0, 1, 1, 1), lend = 2)
+    layout(matrix(c(1, 2), nrow = 2), heights = c(1, 0.25))
+    par(mar = c(0, 0, 0, 0), lend = 2)
     
-    plot0(c(-15, 15), asp = 1)
+    plot0(c(-16, 16))
     ## KC: I've used strwidth to calculate the plot it requires a new plot window to
     ## be open.
     title.coords <- cbind(x = (10.25 + 0.5 * strwidth(nodes$Node.name)) * cos(seqc), 

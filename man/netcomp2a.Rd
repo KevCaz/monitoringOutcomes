@@ -4,7 +4,7 @@
 \alias{netcomp2a}
 \title{Network of desired impacts from monitoring}
 \usage{
-netcomp2a(links, nodes, vec_col1 = c("#edac35", "#64c4eb", "#00ac89"),
+netcomp2a(links, nodes, vec_col1 = c("#f1bf5f", "#00ac89", "#27ade3"),
   vec_col2 = c("#d72968", "#a18037", "#5523b4", "#063632", 1))
 }
 \arguments{

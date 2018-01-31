@@ -4,10 +4,13 @@
 \alias{edge_clustering}
 \title{Edge communities and contribution of edges}
 \usage{
-edge_clustering(links, vec_col = c("#aa380b", "#0b58aa", "#f7e37e"))
+edge_clustering(links, vec_names = NULL, vec_col = c("#993209", "#0c67c8",
+  "#f7e37e"))
 }
 \arguments{
 \item{links}{set of links.}
+
+\item{vec_names}{a vector of character strings that names the nodes.}
 
 \item{vec_col}{a vector describing three colors.}
 }

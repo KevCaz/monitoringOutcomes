@@ -4,7 +4,7 @@
 \alias{dartdiag}
 \title{Dart-styled diagram: Network, closness and more.}
 \usage{
-dartdiag(nodes, links, vec_col = c("#fce983", "#185b86", "#00ac89"))
+dartdiag(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
 }
 \arguments{
 \item{nodes}{set of nodes.}

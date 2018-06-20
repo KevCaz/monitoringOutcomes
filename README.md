@@ -44,6 +44,12 @@ devtools::install_github("inSileco/graphicsutils")
 
 ## How to
 
+Before calling any function, load the package:
+
+```R
+devtools::load_all()
+```
+
 ### Figure 1
 
 ```R

@@ -60,7 +60,7 @@ vec_col <-  c("#f1bf5f", "#058544", "#27ade3")
 data(nodes)
 data(links)
 ## PNG
-png("inst/fig/fig1e.png", width=8, height=10, units="in", res=300)
+png("inst/fig/fig1.png", width=8, height=10, units="in", res=300)
   dartdiag(nodes, links, vec_col)
 dev.off()
 ## SVG

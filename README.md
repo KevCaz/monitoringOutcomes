@@ -93,12 +93,11 @@ dev.off()
 ### Figure 2c
 
 ```R
-set.seed(3466)
 data(nodes3)
 data(links3)
 ## png
 png("inst/fig/fig2c.png", units="in", res=300, width=8.5, heigh=6)
-  connectivity2a(links3, nodes3)
+  connectivity2a(links3, nodes3,  cex_crl = 1.5)
 dev.off()
 ## svg
 CairoSVG("inst/fig/fig2c.svg", width = 8.5, height = 6)
@@ -116,7 +115,7 @@ data(links2)
 data(nodes2)
 vec_names <- sort(gsub(paste0(nodes2[,5L], "  ", nodes2[,2L]), pattern= "^n", replacement = ""))
 png("inst/fig/fig3.png", units="in", res=300, width=8.5, heigh=6.5)
-  edge_clustering(links2, vec_names)
+  edge_clustering(links2, vec_names, vec_col)
 dev.off()
 ## SVG
 CairoSVG("inst/fig/fig3.svg", width=8.5, heigh=6.5)
@@ -136,7 +135,7 @@ set.seed(81932)
 data(nodes2)
 data(links2)
 png("inst/fig/figS3.png", units="in", res=300, width=8, heigh=5)
-  netcomp2a(links2, nodes2)
+  netcomp2a(links2, nodes2, vec_col)
 dev.off()
 ##
 CairoSVG("inst/fig/figS3.svg", width=8, heigh=5)

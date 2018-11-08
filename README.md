@@ -52,12 +52,19 @@ devtools::load_all()
 
 ### Figure 1
 
+
 ```R
+library(Cairo)
 set.seed(1987)
-vec_col <-  c("#f1bf5f", "#00ac89", "#27ade3")
+vec_col <-  c("#f1bf5f", "#058544", "#27ade3")
 data(nodes)
 data(links)
-png("inst/fig/fig1.png", width=8, height=10, units="in", res=300)
+## PNG
+png("inst/fig/fig1e.png", width=8, height=10, units="in", res=300)
+  dartdiag(nodes, links, vec_col)
+dev.off()
+## SVG
+CairoSVG("inst/fig/fig1.svg", width=8, height=10)
   dartdiag(nodes, links, vec_col)
 dev.off()
 ```
@@ -72,7 +79,11 @@ set.seed(3466)
 data(nodes2)
 data(links2)
 png("inst/fig/fig2ab.png", units="in", res=300, width=8.5, heigh=6)
-  walktrap_dendro(links2, nodes2)
+  walktrap_dendro(links2, nodes2, vec_col)
+dev.off()
+## SVG
+CairoSVG("inst/fig/fig2ab.svg", width=8.5, heigh=6)
+  walktrap_dendro(links2, nodes2, vec_col)
 dev.off()
 ```
 
@@ -85,8 +96,13 @@ dev.off()
 set.seed(3466)
 data(nodes3)
 data(links3)
+## png
 png("inst/fig/fig2c.png", units="in", res=300, width=8.5, heigh=6)
   connectivity2a(links3, nodes3)
+dev.off()
+## svg
+CairoSVG("inst/fig/fig2c.svg", width = 8.5, height = 6)
+  connectivity2a(links3, nodes3, vec_col, cex_crl = 1.5)
 dev.off()
 ```
 
@@ -100,6 +116,10 @@ data(links2)
 data(nodes2)
 vec_names <- sort(gsub(paste0(nodes2[,5L], "  ", nodes2[,2L]), pattern= "^n", replacement = ""))
 png("inst/fig/fig3.png", units="in", res=300, width=8.5, heigh=6.5)
+  edge_clustering(links2, vec_names)
+dev.off()
+## SVG
+CairoSVG("inst/fig/fig3.svg",width=8.5, heigh=6.5)
   edge_clustering(links2, vec_names)
 dev.off()
 ```
@@ -117,6 +137,10 @@ data(nodes2)
 data(links2)
 png("inst/fig/figS3.png", units="in", res=300, width=8, heigh=5)
   netcomp2a(links2, nodes2)
+dev.off()
+##
+CairoSVG("inst/fig/figS3.svg", width=8, heigh=5)
+  netcomp2a(links2, nodes2, vec_col)
 dev.off()
 ```
 

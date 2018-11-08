@@ -4,8 +4,8 @@
 \alias{edge_clustering}
 \title{Edge communities and contribution of edges}
 \usage{
-edge_clustering(links, vec_names = NULL, vec_col = c("#993209", "#0c67c8",
-  "#f7e37e"))
+edge_clustering(links, vec_names = NULL, vec_col = c("#993209",
+  "#0c67c8", "#f7e37e"))
 }
 \arguments{
 \item{links}{set of links.}

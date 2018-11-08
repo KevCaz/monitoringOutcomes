@@ -2,5 +2,5 @@
 #'
 #' @name monitoringOutcomes
 #' @docType package
-#' @description Analyses and figure for XXXX
+#' @description Analyses and figure for DOI:XXX
 NULL

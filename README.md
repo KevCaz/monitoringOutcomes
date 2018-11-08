@@ -119,8 +119,8 @@ png("inst/fig/fig3.png", units="in", res=300, width=8.5, heigh=6.5)
   edge_clustering(links2, vec_names)
 dev.off()
 ## SVG
-CairoSVG("inst/fig/fig3.svg",width=8.5, heigh=6.5)
-  edge_clustering(links2, vec_names)
+CairoSVG("inst/fig/fig3.svg", width=8.5, heigh=6.5)
+  edge_clustering(links2, vec_names, vec_col)
 dev.off()
 ```
 

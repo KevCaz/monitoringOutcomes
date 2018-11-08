@@ -55,10 +55,10 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
         ag <- getAngle2d(links$xf[i], links$yf[i], links$xt[i], links$yt[i])
         # hx <- cos(pi * ag/180) * 0.045 * links$node_to_cex[i]
         # hy <- sin(pi * ag/180) * 0.045 * links$node_to_cex[i]
-        hx <- cos(pi * ag/180) * (0.048 * links$node_to_cex[i]+.42) * (.5+ .05*links$orig.wt[i])
-        hy <- sin(pi * ag/180) * (0.048 * links$node_to_cex[i]+.42) * (.5+ .05*links$orig.wt[i])
+        hx <- cos(pi * ag/180) * (0.044 * links$node_to_cex[i]+.44) * (.48+ .05*links$orig.wt[i])
+        hy <- sin(pi * ag/180) * (0.044 * links$node_to_cex[i]+.44) * (.48+ .05*links$orig.wt[i])
         lines(c(links$xf[i], links$xt[i] - hx), c(links$yf[i], links$yt[i] - hy),
-            col = darken(links.pal[i], 25), lwd = .6 * links$orig.wt[i])
+            col = darken(links.pal[i], 15), lwd = .6 * links$orig.wt[i])
         # text(links$xt[i] - hx, links$yt[i] - hy, labels = intToUtf8(9658), srt = ag,
         #     cex = 1 + 0.1 * links$orig.wt[i], col = links.pal[i])
         cex_ah <- .6 + 0.18 * links$orig.wt[i]
@@ -69,7 +69,7 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
         text(rep(links$xt[i] - hx), rep(links$yt[i] - hy),
          labels = rep("\\#H0753"), vfont = c("serif", "plain"),
          srt = ag-90, cex = cex_ah*2,
-         col = darken(links.pal[i], 25))
+         col = darken(links.pal[i], 15))
          text(rep(links$xt[i] - hx, 1), rep(links$yt[i] - hy, 1),
           labels = rep("\\#H0753", 1), vfont = c("serif", "plain"),
           srt = ag-90, cex = cex_ah*1.4,

@@ -17,9 +17,10 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
 
     #### KC: color palettes (I used the same color as on the other graphs)
     pal <- vec_col[as.factor(nodes$Type)]
-    pal2 <- sapply(pal, darken, 30)
+    pal2 <- sapply(pal, darken, 25)
 
     #### HW: small code change for colour coding (Type -> type_from)
+    links <- links[rev(order(links$orig.wt)),]
     links.pal <- vec_col[as.factor(links$type_from)]
 
     #### KC: title attributes
@@ -52,17 +53,32 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
     ## centre of the circle.
     for (i in 1:nrow(links)) {
         ag <- getAngle2d(links$xf[i], links$yf[i], links$xt[i], links$yt[i])
-        hx <- cos(pi * ag/180) * 0.045 * links$node_to_cex[i]
-        hy <- sin(pi * ag/180) * 0.045 * links$node_to_cex[i]
+        # hx <- cos(pi * ag/180) * 0.045 * links$node_to_cex[i]
+        # hy <- sin(pi * ag/180) * 0.045 * links$node_to_cex[i]
+        hx <- cos(pi * ag/180) * (0.048 * links$node_to_cex[i]+.42) * (.5+ .05*links$orig.wt[i])
+        hy <- sin(pi * ag/180) * (0.048 * links$node_to_cex[i]+.42) * (.5+ .05*links$orig.wt[i])
         lines(c(links$xf[i], links$xt[i] - hx), c(links$yf[i], links$yt[i] - hy),
-            col = links.pal[i], lwd = 0.75 * links$orig.wt[i])
-        text(links$xt[i] - hx, links$yt[i] - hy, labels = intToUtf8(9658), srt = ag,
-            cex = 1 + 0.1 * links$orig.wt[i], col = links.pal[i])
+            col = darken(links.pal[i], 25), lwd = .6 * links$orig.wt[i])
+        # text(links$xt[i] - hx, links$yt[i] - hy, labels = intToUtf8(9658), srt = ag,
+        #     cex = 1 + 0.1 * links$orig.wt[i], col = links.pal[i])
+        cex_ah <- .6 + 0.18 * links$orig.wt[i]
+        # text(rep(links$xt[i] - hx, 5), rep(links$yt[i] - hy, 5),
+        #  labels = rep("\\#H0753", 5), vfont = c("serif", "plain"),
+        #  srt = ag-90, cex = cex_ah*(1:5)*.5,
+        #  col = darken(links.pal[i], 40))
+        text(rep(links$xt[i] - hx), rep(links$yt[i] - hy),
+         labels = rep("\\#H0753"), vfont = c("serif", "plain"),
+         srt = ag-90, cex = cex_ah*2,
+         col = darken(links.pal[i], 25))
+         text(rep(links$xt[i] - hx, 1), rep(links$yt[i] - hy, 1),
+          labels = rep("\\#H0753", 1), vfont = c("serif", "plain"),
+          srt = ag-90, cex = cex_ah*1.4,
+          col = links.pal[i])
     }
 
     ## KC: NODES
-    points(nodes$x, nodes$y, cex = 0.2 * nodes$No.sources, pch = 21, col = pal2,
-        bg = pal, lwd = 1.8)
+    points(nodes$x, nodes$y, cex = .15 * nodes$No.sources, pch = 21, col = pal2,
+        bg = pal, lwd = 1.2)
 
     ## KC: LABELS
     for (i in 1:length(seqc)) {
@@ -76,9 +92,9 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
     plot0()
     sqs <- c(5, 10, 30)
     sql <- c(1, 5, 10)
-    legend(-0.8, 1, legend = paste0(sqs, " sources"), pt.cex = 0.2 * sqs, pch = 21,
+    legend(-0.8, 1, legend = paste0(sqs, " sources"), pt.cex = .15 * sqs, pch = 21,
         y.intersp = 2, x.intersp = 2, bty = "n")
-    legend(-0.3, 1, legend = paste0(sql, " connection", c("", "", "s")), lwd = 0.75 *
+    legend(-0.3, 1, legend = paste0(sql, " connection", c("", "", "s")), lwd = 0.6 *
         sql, y.intersp = 2, x.intersp = 2, bty = "n")
     # HW added legend item for colours, and adjusted positioning for others
     legend(0.35, 1, legend = c("Information", "Process", "Combined"), pt.cex = 4,

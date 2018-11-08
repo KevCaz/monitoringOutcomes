@@ -55,7 +55,6 @@ devtools::load_all()
 
 ```R
 library(Cairo)
-set.seed(1987)
 vec_col <-  c("#f1bf5f", "#058544", "#27ade3")
 data(nodes)
 data(links)

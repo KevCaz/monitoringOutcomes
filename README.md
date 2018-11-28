@@ -1,6 +1,9 @@
 # monitoringOutcomes
 
 
+[![DOI](https://zenodo.org/badge/94637265.svg)](https://zenodo.org/badge/latestdoi/94637265)
+
+
 ## Overview
 
 R functions for analysis of stakeholder perceptions of desirable monitoring outcomes.

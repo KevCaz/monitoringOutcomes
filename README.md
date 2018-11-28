@@ -1,6 +1,6 @@
 # monitoringOutcomes
 
-
+[![Build Status](https://travis-ci.org/KevCaz/monitoringOutcomes.svg?branch=master)](https://travis-ci.org/KevCaz/monitoringOutcomes)
 [![DOI](https://zenodo.org/badge/94637265.svg)](https://zenodo.org/badge/latestdoi/94637265)
 
 

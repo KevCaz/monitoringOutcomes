@@ -8,22 +8,25 @@
 #' @param nodes set of nodes.
 #' @param links set of links.
 #' @param vec_col a vector describing three colors.
+#' @param arrowPNG a logical. If \code{TRUE} then a triangular symbol is used,
+#' it cannot be successfully exported in vector files though.
 #'
 #' @importFrom graphics layout legend lines par points text strwidth
 #' @importFrom graphicsutils circles darken getAngle2d plot0
 #' @export
 
-dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3")) {
+dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"),
+  arrowPNG = FALSE) {
 
-    #### KC: color palettes (I used the same color as on the other graphs)
+    #### color palettes (I used the same color as on the other graphs)
     pal <- vec_col[as.factor(nodes$Type)]
     pal2 <- sapply(pal, darken, 25)
 
-    #### HW: small code change for colour coding (Type -> type_from)
+    #### small code change for colour coding (Type -> type_from)
     links <- links[rev(order(links$orig.wt)),]
     links.pal <- vec_col[as.factor(links$type_from)]
 
-    #### KC: title attributes
+    #### title attributes
     seqc <- rev(pi/2 + seq(0, 2 * pi, length.out = nrow(nodes) + 1)[-1])
     title.angle <- 180 * (seqc)/pi
     id <- which(seqc > pi/2 & seqc < 3 * pi/2)
@@ -33,12 +36,11 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
     par(mar = c(0, 0, 0, 0), lend = 2)
 
     plot0(c(-16, 16))
-    ## KC: I've used strwidth to calculate the plot it requires a new plot window to
+    ## I've used strwidth to calculate the plot it requires a new plot window to
     ## be open.
     title.coords <- cbind(x = (10.25 + 0.5 * strwidth(nodes$Node.name)) * cos(seqc),
         y = (10.25 + 0.5 * strwidth(nodes$Node.name)) * sin(seqc))
-    ## KC: Improving the readability of the figure (`circle` is my own circle
-    ## function)
+    ## Improving the readability of the figure (`circle` is my own circle function)
     dan <- 0.5 * (seqc[1] - seqc[2])
     for (i in 1:(length(seqc) - 1)) {
         circles(0, 0, 10, from = seqc[i + 1] - dan, to = seqc[i] - dan, col = c(NA,
@@ -51,7 +53,18 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
     ## KC: LINKS and ARROWS' HEADS - Here it starts to be tricky I calculate the links
     ## and arrow coordinates so have the arrows arrive on the circle edges not on the
     ## centre of the circle.
-    for (i in 1:nrow(links)) {
+    if (arrowPNG) {
+      for (i in 1:nrow(links)) {
+        ag <- getAngle2d(links$xf[i], links$yf[i], links$xt[i], links$yt[i])
+        hx <- cos(pi * ag/180) * 0.045 * links$node_to_cex[i]
+        hy <- sin(pi * ag/180) * 0.045 * links$node_to_cex[i]
+        lines(c(links$xf[i], links$xt[i] - hx), c(links$yf[i], links$yt[i] - hy),
+            col = links.pal[i], lwd = 0.75 * links$orig.wt[i])
+        text(links$xt[i] - hx, links$yt[i] - hy, labels = intToUtf8(9658),
+          srt = ag, cex = 1 + 0.1 * links$orig.wt[i], col = links.pal[i])
+      }
+    } else {
+      for (i in 1:nrow(links)) {
         ag <- getAngle2d(links$xf[i], links$yf[i], links$xt[i], links$yt[i])
         # hx <- cos(pi * ag/180) * 0.045 * links$node_to_cex[i]
         # hy <- sin(pi * ag/180) * 0.045 * links$node_to_cex[i]
@@ -62,18 +75,16 @@ dartdiag <- function(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
         # text(links$xt[i] - hx, links$yt[i] - hy, labels = intToUtf8(9658), srt = ag,
         #     cex = 1 + 0.1 * links$orig.wt[i], col = links.pal[i])
         cex_ah <- .6 + 0.18 * links$orig.wt[i]
-        # text(rep(links$xt[i] - hx, 5), rep(links$yt[i] - hy, 5),
-        #  labels = rep("\\#H0753", 5), vfont = c("serif", "plain"),
-        #  srt = ag-90, cex = cex_ah*(1:5)*.5,
-        #  col = darken(links.pal[i], 40))
+
         text(rep(links$xt[i] - hx), rep(links$yt[i] - hy),
-         labels = rep("\\#H0753"), vfont = c("serif", "plain"),
-         srt = ag-90, cex = cex_ah*2,
-         col = darken(links.pal[i], 15))
-         text(rep(links$xt[i] - hx, 1), rep(links$yt[i] - hy, 1),
-          labels = rep("\\#H0753", 1), vfont = c("serif", "plain"),
-          srt = ag-90, cex = cex_ah*1.4,
-          col = links.pal[i])
+        labels = rep("\\#H0753"), vfont = c("serif", "plain"),
+        srt = ag-90, cex = cex_ah*2,
+              col = darken(links.pal[i], 15))
+            text(rep(links$xt[i] - hx, 1), rep(links$yt[i] - hy, 1),
+              labels = rep("\\#H0753", 1), vfont = c("serif", "plain"),
+              srt = ag-90, cex = cex_ah*1.4,
+              col = links.pal[i])
+        }
     }
 
     ## KC: NODES

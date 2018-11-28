@@ -68,7 +68,7 @@ data(links)
 
 ## PNG
 png("inst/fig/fig1.png", width=8, height=10, units="in", res=300)
-  dartdiag(nodes, links, vec_col)
+  dartdiag(nodes, links, vec_col, arrowPNG = TRUE)
 dev.off()
 
 ## SVG

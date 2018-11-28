@@ -8,6 +8,7 @@
 #' @param nodes set of nodes.
 #' @param links set of links.
 #' @param vec_col1 a vector describing three colors.
+#' @param cex_crl Amount by which nodes should be magnified relative to the default.
 #'
 #' @importFrom graphics plot abline text
 #' @export

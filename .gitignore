@@ -1,12 +1,7 @@
 # KC added
 Makefile
 inst/datafinal
-inst/dataReady
-inst/Final
-inst/R
-*.csv
-old/
-
+inst/Rscripts
 
 # History files
 .Rhistory

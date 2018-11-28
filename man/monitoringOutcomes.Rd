@@ -6,5 +6,5 @@
 \alias{monitoringOutcomes-package}
 \title{monitoringOutcomes}
 \description{
-Analyses and figure for XXXX
+Analyses and figure for DOI:XXX
 }

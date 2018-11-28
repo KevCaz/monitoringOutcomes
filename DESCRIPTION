@@ -2,7 +2,7 @@ Package: monitoringOutcomes
 Type: Package
 Title: Data, analyses and figures found in Wheeler et al. (2018) DOI: XX
 Version: 1.0-0
-Date: 2018-06-19
+Date: 2018-11-28
 Authors@R: c(
   person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre")),
   person("Helen", "Wheeler", role = c("aut"))
@@ -28,4 +28,5 @@ License: GPL-2
 URL: https://github.com/KevCaz/monitoringOutcomes
 BugReports: https://github.com/KevCaz/monitoringOutcomes/issues
 VignetteBuilder: knitr
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
+Encoding: UTF-8

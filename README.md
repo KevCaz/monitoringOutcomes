@@ -106,25 +106,26 @@ dev.off()
 
 ![](inst/fig/fig2c.png)
 
+
 ### Figure 3
 
 ```R
-set.seed(102)
+set.seed(2)
 data(links2)
 data(nodes2)
-vec_names <- sort(gsub(paste0(nodes2[,5L], "  ", nodes2[,2L]), pattern= "^n", replacement = ""))
-png("inst/fig/fig3.png", units="in", res=300, width=8.5, heigh=6.5)
+vec_names <- sort(gsub(paste0(nodes2[,1L], "  ", nodes2[,2L]), pattern= "^n", replacement = ""))
+png("inst/fig/fig3.png", units = "in", res = 300, width = 8,  height = 5)
   edge_clustering(links2, vec_names, vec_col)
 dev.off()
+set.seed(2)
 ## SVG
-CairoSVG("inst/fig/fig3.svg", width=8.5, heigh=6.5)
+CairoSVG("inst/fig/fig3.svg", width = 8, heigh = 5)
   edge_clustering(links2, vec_names, vec_col)
 dev.off()
 ```
 
-
-
 ![](inst/fig/fig3.png)
+
 
 
 ### Figure S3

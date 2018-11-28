@@ -21,25 +21,25 @@ edge_clustering <- function(links, vec_names = NULL, vec_col = c("#993209", "#0c
 
     tmp <- !is.null(names)
     if (tmp)
-        layout(matrix(2:1, 1), widths = c(1, 0.8))
+        layout(matrix(2:1, 1), widths = c(1, 0.65))
     # community analyses
-    par(mar = c(1, 0, 1, 1))
+    par(mar = c(0, 0, 0, 1))
     lc <- linkcomm::getLinkCommunities(links, directed = FALSE, removetrivial = FALSE,
         plot = FALSE)
 
     if (tmp) {
         plot0()
-        legend("center", legend = vec_names, bty = "n", cex = 1.1)
+        legend("center", legend = vec_names, bty = "n", cex = 1)
     }
 
     # plotting with fruchterman reingold placement and pies showing node degree for
     # weighted network
-    par(mar = c(0,1,0,0))
+    par(mar = c(0, 0, 0, 0))
     linkcomm:::plot.linkcomm(lc, type = "graph", vertex.radius = 0.07,
-      margin = -1, pal = pal, vlabel.cex = 1.25,
-      ewidth = graph.feature(lc, type = "edges", indices = getEdgesIn(lc),
-      features = 5, default = 1),
-      layout = layout.fruchterman.reingold, col.nonclusters = "grey",
+      pal = pal, vlabel.cex = 1, lwd = .2,
+      ewidth = linkcomm::graph.feature(lc, type = "edges",
+      indices = linkcomm::getEdgesIn(lc), features = 5, default = 1),
+      layout = igraph::layout.fruchterman.reingold, col.nonclusters = "grey",
       showall = TRUE)
 
     # linkcomm:::plot.linkcomm(lc, type = "graph", vertex.radius = 0.07, margin = -1.5,

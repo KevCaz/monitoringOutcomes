@@ -39,6 +39,6 @@ set.seed(2)
 svg("fig/fig3b.svg", width=8, height=10)
 plot(lc, type = "graph", vertex.radius=0.07,margin=-1, pal=pal4, vlabel.cex=1.4,
     ewidth = graph.feature(lc, type = "edges", indices = getEdgesIn(lc), features = 5, default = 1),
-   layout = layout.fruchterman.reingold, col.nonclusters="grey", showall=TRUE)
+   layout = igraph::layout.fruchterman.reingold, col.nonclusters="grey", showall=TRUE)
 
  dev.off()

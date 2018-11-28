@@ -14,7 +14,7 @@ netcomp2a(links, nodes, vec_col1 = c("#f1bf5f", "#00ac89", "#27ade3"),
 
 \item{vec_col1}{a vector describing three colors.}
 
-\item{vec_col2}{a vector describing five colors.}
+\item{vec_col2}{a vector describing five colors to encircle the nodes.}
 }
 \description{
 Fig S1: Plotting of network of desired impacts from monitoring -

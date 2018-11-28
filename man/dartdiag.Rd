@@ -4,7 +4,8 @@
 \alias{dartdiag}
 \title{Dart-styled diagram: Network, closness and more.}
 \usage{
-dartdiag(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
+dartdiag(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"),
+  arrowPNG = FALSE)
 }
 \arguments{
 \item{nodes}{set of nodes.}
@@ -12,6 +13,9 @@ dartdiag(nodes, links, vec_col = c("#f1bf5f", "#00ac89", "#27ade3"))
 \item{links}{set of links.}
 
 \item{vec_col}{a vector describing three colors.}
+
+\item{arrowPNG}{a logical. If \code{TRUE} then a triangular symbol is used,
+it cannot be successfully exported in vector files though.}
 }
 \description{
 Figure 1. Network diagram of the desirable impacts of monitoring

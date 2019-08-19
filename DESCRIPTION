@@ -1,13 +1,13 @@
 Package: monitoringOutcomes
 Type: Package
-Title: Data, analyses and figures found in Wheeler et al. (2018) DOI: XX
+Title: Data, analyses and figures found in Wheeler et al. (2019) DOI: 10.1111/cobi.13257
 Version: 1.0-0
 Date: 2018-11-28
 Authors@R: c(
   person("Kevin", "Cazelles", email = "kcazelle@uoguelph.ca", comment = c(ORCID = "0000-0001-6619-9874"), role = c("aut", "cre")),
   person("Helen", "Wheeler", role = c("aut"))
   )
-Description: This package aims at reproducing the analyses and figures found in Wheeler et al. (2018) DOI: "XXX".
+Description: This package aims at reproducing the analyses and figures found in Wheeler et al. (2018) DOI: 10.1111/cobi.13257.
 Depends:
     R (>= 3.0.0)
 Imports:

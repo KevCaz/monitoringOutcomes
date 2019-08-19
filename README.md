@@ -7,7 +7,8 @@
 
 ## Overview
 
-R functions for analysis of stakeholder perceptions of desirable monitoring outcomes.
+R functions to reproduce the analysis carried out in : "Identifying key needs for the integration of social–ecological outcomes in arctic wildlife monitoring" (DOI: 10.1111/cobi.13257).
+
 The following R functions (see `R/`) relate to the following figures.
 
 - **Fig 1**: `dartdiag.R`
@@ -17,10 +18,10 @@ The following R functions (see `R/`) relate to the following figures.
 - **Fig S3**: `3netscomp2a.R`
 
 The sets of links and nodes required to create the figures are included in the
-`data` folder (basically the data associated with the paper); three versions
-are furnished. See the [How to](#how-to) section to reproduce the figures of
-the manuscript. Note that for some figures, the nodes coordinates are randomized
-to avoid such behavior, we used `set.seed()` below.
+`data` folder (basically the data associated with the paper); three versions are
+furnished. See the [How to](#how-to) section to reproduce the figures of the
+manuscript. Note that for some figures, the nodes coordinates are randomized to
+avoid such behavior, we used `set.seed()` below.
 
 
 
